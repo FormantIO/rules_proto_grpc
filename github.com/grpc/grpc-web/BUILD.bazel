@@ -4,7 +4,7 @@ proto_plugin(
     name = "closure_plugin",
     options = [
         "import_style=closure",
-        "mode=grpcweb",
+        "mode=grpcwebtext",
     ],
     outputs = [
         "{protopath}_grpc_web_pb.js",
@@ -17,7 +17,7 @@ proto_plugin(
     name = "commonjs_plugin",
     options = [
         "import_style=commonjs",
-        "mode=grpcweb",
+        "mode=grpcwebtext",
     ],
     outputs = [
         "{protopath}_grpc_web_pb.js",
@@ -30,7 +30,7 @@ proto_plugin(
     name = "commonjs_dts_plugin",
     options = [
         "import_style=commonjs+dts",
-        "mode=grpcweb",
+        "mode=grpcwebtext",
     ],
     output_directory = True, # Plugin outputs cannot be predicted as they depend on service/package name
     tool = "@com_github_grpc_grpc_web//javascript/net/grpc/web:protoc-gen-grpc-web",
@@ -41,7 +41,7 @@ proto_plugin(
     name = "ts_plugin",
     options = [
         "import_style=typescript",
-        "mode=grpcweb",
+        "mode=grpcwebtext",
     ],
     output_directory = True, # Plugin outputs cannot be predicted as they depend on service/package name
     tool = "@com_github_grpc_grpc_web//javascript/net/grpc/web:protoc-gen-grpc-web",
