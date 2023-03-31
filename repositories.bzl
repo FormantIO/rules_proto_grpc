@@ -230,10 +230,16 @@ VERSIONS = {
         "sha256": "6b73e8e9ef2deb114d39c9eea177ff8450d92e7154b5e47dea668a43499a2383",
         "executable": True,
     },
-    "grpc_web_plugin_linux": {
+    "grpc_web_plugin_linux_x86_64": {
         "type": "http_file",  # When updating, also update in package.json and vice-versa
         "urls": ["https://github.com/grpc/grpc-web/releases/download/1.4.2/protoc-gen-grpc-web-1.4.2-linux-x86_64"],
         "sha256": "5e82c3f1f435e176c94b94de9669911ab3bfb891608b7e80adff358f777ff857",
+        "executable": True,
+    },
+     "grpc_web_plugin_linux_arm64": {
+        "type": "http_file",  # When updating, also update in package.json and vice-versa
+        "urls": ["https://github.com/grpc/grpc-web/releases/download/1.4.2/protoc-gen-grpc-web-1.4.2-linux-aarch64"],
+        "sha256": "db3b1e18284a157b1361ecb79502e5f4623a212daf7185f17e35bd8e239055a4",
         "executable": True,
     },
     "grpc_web_plugin_windows": {
@@ -600,8 +606,11 @@ def grpc_web_plugin_darwin_arm64(**kwargs):
 def grpc_web_plugin_darwin_x86_64(**kwargs):
     _generic_dependency("grpc_web_plugin_darwin_x86_64", **kwargs)
 
-def grpc_web_plugin_linux(**kwargs):
-    _generic_dependency("grpc_web_plugin_linux", **kwargs)
+def grpc_web_plugin_linux_x86_64(**kwargs):
+    _generic_dependency("grpc_web_plugin_linux_x86_64", **kwargs)
+
+def grpc_web_plugin_linux_arm64(**kwargs):
+    _generic_dependency("grpc_web_plugin_linux_arm64", **kwargs)
 
 def grpc_web_plugin_windows(**kwargs):
     _generic_dependency("grpc_web_plugin_windows", **kwargs)
